@@ -1,7 +1,13 @@
 import React from 'react';
+import menu from './data';
+import {useState}from 'react'
 
-const Menu = () => {
-  return <h2>menu component</h2>;
+const Menu = ({id,title,category}) => {
+  
+  
+
+  return <button className='btn'>{category}</button>;
 };
 
 export default Menu;
+;
