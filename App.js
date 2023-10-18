@@ -4,14 +4,20 @@ import Categories from './Categories';
 import items from './data';
 import menu from './data';
 
+const allCatagoreies=new Set(menu.map((item)=>{return item.category}))
+console.log(allCatagoreies);
+
+
+
 function App() {
   const [menues,setMenues]=useState(menu);
   const[category,setCategory]=useState([]);
 
-  function changeCategory(id){
-menu.filter((item)=>{
-  item.id===id ? setCategory(item):setCategory('')
-})
+  function changeCategory(category){
+    let newItem=menu.filter((item)=>item.category===category
+    )
+    setMenues(newItem);
+
   }
 
   return <main>
