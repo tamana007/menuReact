@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Categories = () => {
-  return <h2>categories component</h2>;
+const Categories = ({fun}) => {
+
+  return (
+    <button onClick={fun}>click</button>
+  )
 };
 
 export default Categories;

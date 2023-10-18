@@ -5,18 +5,28 @@ import items from './data';
 import menu from './data';
 
 function App() {
-  const [menues,setMenues]=useState(menu)
+  const [menues,setMenues]=useState(menu);
+  const[category,setCategory]=useState([]);
+
+  function changeCategory(id){
+menu.filter((item)=>{
+  item.id===id ? setCategory(item):setCategory('')
+})
+  }
 
   return <main>
-<header>
-<h2>Our Menu</h2>;
-<div className='underline'></div>
-{menues.map((menu)=>{
-    return <Menu key={menu.id}{...menu}/>
-  })}
+    
+<section className='menu section'>
 
-</header>
-<div className='container'><Categories/></div>
+  <div className='title'>
+    <h2>our Menu</h2>
+   
+    <div className='underline'></div>
+    <Categories fun={changeCategory}/>
+    <Menu items={menues}/>
+  </div>
+
+</section>
   </main> 
 }
 
